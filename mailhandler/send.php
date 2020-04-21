@@ -41,7 +41,6 @@ $oldremoteaddr = $_SERVER['REMOTE_ADDR'];
 $_SERVER['PHP_SELF'] = "/";
 $_SERVER['REMOTE_ADDR'] = $_SERVER['SERVER_ADDR'];
 
-
 mail($to,$subject,$message,$headers);
 
 $_SERVER['PHP_SELF'] = $oldphpself;
