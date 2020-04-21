@@ -1,7 +1,7 @@
 # Spoofed E-Mail Sender (SEMS)
 ## This tool is a Spoofed/Fake E-Mail Sending tool for educational use
 
-This tool is a straightforward program created by using Python version Three and PHP. You can send Spoofed/Fake E-Mails by using this tool. Not a like other tools, this tool is using a PHP mail() function to handling E-Mails, so this tool required PHP mail() function enabled hosting service for hosting mail handler.
+This tool is a straightforward program created by using Python version Three and PHP. You can send Spoofed/Fake E-Mails by using this tool. Unlike other tools, this tool is using a PHP mail() function to handling E-Mails, so this tool required PHP mail() function enabled hosting service for hosting mail handler.
 
 ### LEGAL NOTICE:
 This tool is provided for educational use only. If you engage in any illegal activity, the author does not take any responsibility for it. By using this tool, you agree with these terms.
