@@ -30,9 +30,6 @@ banner = """
 
 print (banner, "\n");
 
-#Replace the following line with your hosted mail handler.
-mailhandler = "https://www.yourwebsite.com/send.php"
-
 def google_ok():
     try:
         urlopen('https://www.google.com', timeout=10);
@@ -51,8 +48,8 @@ def yahoo_ok():
 
 def mailhandler_ok():
     try:
-        urllib.request.urlopen('http://'+mailhandler, timeout=10);
-        return True
+        mhand = open ('mhandurl.txt', 'r');
+        mhand.close
     except: 
         return False
     return True
@@ -86,17 +83,36 @@ data = {
        }
 
 if google_ok() or yahoo_ok():
-    print ('[*] Internet Status: Online')
+    print ('[*] Internet Status: Online');
+    print ();
+    
+    if mailhandler_ok():
+        print ('[*] Mail handler Status: Available');
+        
+    else:
+        print ('[*] Mail handler Status: Unavailable');
+        print ();
+        wmhand = str(input('Paste your mail handler URL: '));
+        mhand = open ('mhandurl.txt', 'w');
+        mhand.write(wmhand);
+        mhand.close
+        print ();
+        print ('[*] Getting a new mail handler');
+
+    mhand = open ('mhandurl.txt', 'r');
+    mailhandler = mhand.read();
+    mhand.close
+    
     encoded_data = urlencode(data).encode("utf-8");
     urlopen(mailhandler, encoded_data);
-    #print (content.readlines());
+    print ();
     print ('[*] E-Mail sent !');
     print ('[*] Some E-Mails will be blocked by E-Mail servers.');
     print ('[*] It depends on Sender E-Mail Address.');
     sys.exit(0);
+    
 else:
-    print ('[*] Internet: Offline');
+    print ('[*] Internet Status: Offline');
     print ('[*] You need an Internet connection to send E-Mail.');
 
 sys.exit(0);
- 
