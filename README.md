@@ -10,7 +10,7 @@ This tool is provided for educational use only. If you engage in any illegal act
 
 Before using this tool, you must host the two files ([index.php](../master/mailhandler/index.php) and [send.php](../master/mailhandler/send.php)) in the [mailhandler](../master/mailhandler/) folder. This hosting service must have PHP mail() function enabled. Otherwise, this tool won't work.
 
-After that, find the line number 34 and replace https://www.yourwebsite.com/send.php with your hosted send.php location. Now your tool is ready to use. Follow the usage instructions below.
+After that, this tool will be asked for the mail handler URL (Only for the first time). So, you have to copy the URL of the hosted send.php file and paste it on the input.
 
 ### Usage:
 ```
