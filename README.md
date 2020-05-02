@@ -27,3 +27,4 @@ optional arguments:
   --msg MSG   Type Message (Eg: "You can see me brother. I know that.")
 ```
 
+My blog post about this: [Spoofed E-Mail Sender (SEMS)](https://clasiru.blogspot.com/2020/04/python-php-spoofed-e-mail-sender-sems.html)
