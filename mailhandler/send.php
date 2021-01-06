@@ -30,21 +30,17 @@ $subject = $_POST['subject'];
 $message = $_POST['message'];
 $fromemail = $_POST['fromemail'];
 $fromname = $_POST['fromname'];
-$lt= '<';
-$gt= '>';
-$sp= ' ';
-$from= 'From:';
-$headers = $from.$fromname.$sp.$lt.$fromemail.$gt;
 
-$oldphpself = $_SERVER['PHP_SELF'];
-$oldremoteaddr = $_SERVER['REMOTE_ADDR'];
-$_SERVER['PHP_SELF'] = "/";
-$_SERVER['REMOTE_ADDR'] = $_SERVER['SERVER_ADDR'];
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	$headers .= "From:" . $fromname . " <" . $fromemail . ">" . "\r\n";
+	$headers .= "X-Priority: 3 (Normal)" . "\r\n";
+	$headers .= "Errors-To:" . $fromemail . "\r\n";
+	$headers .= "Reply-To:" . $fromemail . "\r\n";
+	$headers .= "Return-Path:" . $fromemail . "\r\n";
+			
+	mail($to,$subject,$message,$headers,'-f' . $fromemail);
 
-mail($to,$subject,$message,$headers);
-
-$_SERVER['PHP_SELF'] = $oldphpself;
-$_SERVER['REMOTE_ADDR'] = $oldremoteaddr;
 exit();
 
 ?>
